@@ -1,6 +1,6 @@
 {
-  "name": "ftp-ts",
-  "version": "0.0.1",
+  "name": "fs-ftp-ts",
+  "version": "0.0.3",
   "description": "FTP Client in TypeScript",
   "author": "Konrad Kuznicki",
   "license": "MIT",

@@ -1,4 +1,4 @@
-import * as FTP from './ftp';
+import * as FTP from '../ftp';
 import { URL } from 'url';
 import { FTPDir, parseFTPDir } from './InputParsers/dirParser';
 import { FTPFile, parseFTPFile } from './InputParsers/fileParser';
