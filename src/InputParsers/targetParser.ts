@@ -6,6 +6,8 @@ export type Parser<T extends {}> = (url: URL) => T;
 
 export interface FTPServerURL {
   protocol: FTPProtocols;
+  user?: string;
+  password?: string;
   host: string;
   port: number;
 }
@@ -43,12 +45,18 @@ export function parseTarget<T extends {}>(
     );
   }
 
-  const tmp = {
+  const tmp: FTPServerURL = {
     protocol: URLProtocol2FTPProtocol(url.protocol),
     host: url.hostname,
     port: (url.port && parseInt(url.port, 10)) || 21,
   };
 
+  if (url.username) {
+    tmp.user = url.username;
+  }
+  if (url.password) {
+    tmp.password = url.password;
+  }
   if (typeof additionalParser === 'undefined') {
     return tmp;
   } else {

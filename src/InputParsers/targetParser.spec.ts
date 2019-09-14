@@ -22,6 +22,8 @@ describe('parseTarget', () => {
   });
   it('should be ok with maximal ftp file path', () => {
     expect(parseTarget('ftp://lol:nope@asdf:2121/asdf')).toStrictEqual({
+      user: 'lol',
+      password: 'nope',
       protocol: 'ftp',
       host: 'asdf',
       port: 2121,
@@ -35,6 +37,8 @@ describe('parseTarget', () => {
   it('should be ok with URL object', () => {
     expect(parseTarget(new URL('ftp://lol:nope@asdf:2121/asdf'))).toStrictEqual(
       {
+        user: 'lol',
+        password: 'nope',
         protocol: 'ftp',
         host: 'asdf',
         port: 2121,

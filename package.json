@@ -1,6 +1,6 @@
 {
   "name": "fs-ftp-ts",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "FTP Client in TypeScript",
   "author": "Konrad Kuznicki",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "keywords": ["ftp", "ftp client", "TypeScript", "ftp-client"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KonradKuznicki/ftp-ts.git"
+    "url": "git+https://github.com/KonradKuznicki/fs-ftp-ts.git"
   },
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",

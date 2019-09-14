@@ -2,7 +2,7 @@ import * as FTP from '../ftp';
 import { URL } from 'url';
 import { FTPDir, parseFTPDir } from './InputParsers/dirParser';
 import { FTPFile, parseFTPFile } from './InputParsers/fileParser';
-import { Parser, parseTarget } from './InputParsers/targetParser';
+import { FTPServerURL, Parser, parseTarget } from './InputParsers/targetParser';
 
 interface Reader<T> {
   parser: Parser<T>;
@@ -14,7 +14,8 @@ export const read = async <T extends { path: string }>(
   reader: Reader<T>,
 ) => {
   const config = parseTarget(target, reader.parser);
-  const client = FTP({ host: config.host, port: config.port });
+  const serverConfig: FTPServerURL = config as FTPServerURL; // <-- this doesn't work
+  const client = FTP(serverConfig);
   await client.connect();
   const content = await reader.reader.call(client, config.path);
   await client.disconnect();
