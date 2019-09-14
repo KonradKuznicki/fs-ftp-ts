@@ -1,4 +1,4 @@
-import { readFile } from '../src';
+import { readdir, readFile } from '../src';
 
 import { FtpSrv } from 'ftp-srv';
 // const FtpServer = require('ftp-srv');
@@ -16,11 +16,15 @@ beforeAll(() => {
   srv.listen();
 });
 
-describe('FTP', () => {
-  describe('FTP end 2 end with real server', () => {
+describe('FTP end 2 end with real server', () => {
+  describe('readFile', () => {
     it('should download test file', async () => {
       const file = await readFile(ftpurl + '/test.txt');
-      expect(file.toString('utf8')).toEqual(expect.stringContaining('test'))
+      expect(file.toString('utf8')).toEqual(expect.stringContaining('test'));
+    });
+    it('should list files', async () => {
+      const list = await readdir(ftpurl);
+      expect(list).toHaveLength(1);
     });
   });
 });

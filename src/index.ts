@@ -109,12 +109,17 @@ export const fileReader: Reader<FTPFile> = {
   parser: parseFTPFile,
   reader: FTP.prototype.getBuffer,
 };
+
+/**
+ * Reads file from given url into memory - _be careful!_
+ * @param target - for example: ftp://localhost/test.txt
+ */
 export const readFile = async (target: URL | string) => {
   return await read(target, fileReader);
 };
 
 export const dirReader: Reader<FTPDir> = {
-  parser: parseFTPFile,
+  parser: parseFTPDir,
   reader: FTP.prototype.list,
 };
 export const readdir = async (target: URL | string) => {

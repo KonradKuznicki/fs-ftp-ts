@@ -3,7 +3,6 @@ const Client = require('ftp');
 class FTP {
   constructor(config) {
     this.config = config;
-    console.log(config);
     this.c = new Client();
     this._connected = false;
     this._timeOut = null;
