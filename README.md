@@ -4,7 +4,7 @@ To get something working for the first version I used [node-ftp](https://github.
 
 But this project is not maintained for last 4 years so I plan to rewrite it and fix bugs
 
-# FTP Client in TypeScript
+# FTP Client in TypeScript [![Coverage Status](https://coveralls.io/repos/github/KonradKuznicki/ftp-ts/badge.svg?branch=master)](https://coveralls.io/github/KonradKuznicki/ftp-ts?branch=master) [![CircleCI](https://circleci.com/gh/KonradKuznicki/ftp-ts.svg?style=svg)](https://circleci.com/gh/KonradKuznicki/ftp-ts)
 
 This client is focused on ease of usage 
  
