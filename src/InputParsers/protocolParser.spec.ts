@@ -1,5 +1,6 @@
 import {
-  FTPProtocolInputError, FTPProtocols,
+  FTPProtocolInputError,
+  FTPProtocols,
   URLProtocol2FTPProtocol,
 } from './protocolParser';
 
