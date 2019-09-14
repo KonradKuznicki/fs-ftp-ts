@@ -1,4 +1,5 @@
 import { InputError } from './InputError';
+import { URL } from 'url';
 
 export class FTPDirInputError extends InputError {}
 

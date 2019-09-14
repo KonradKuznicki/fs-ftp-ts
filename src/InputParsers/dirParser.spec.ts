@@ -1,4 +1,5 @@
 import { FTPDirInputError, parseFTPDir } from './dirParser';
+import { URL } from 'url';
 
 describe('parseFTPDir', () => {
   it('should get dir for dir', () => {

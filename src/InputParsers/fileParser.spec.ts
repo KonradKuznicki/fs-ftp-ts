@@ -1,4 +1,5 @@
 import { FTPFileInputError, parseFTPFile } from './fileParser';
+import { URL } from 'url';
 
 describe('parseFTPFile', () => {
   it('should get file path for file', () => {

@@ -1,6 +1,5 @@
 import { FTPServerURLInputError, parseTarget } from './targetParser';
-import { URL, parse } from 'url';
-import { FTPProtocols } from './protocolParser';
+import { URL } from 'url';
 
 describe('parseTarget', () => {
   it('should throw error when there is anything missing on path', () => {
