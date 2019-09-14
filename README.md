@@ -15,9 +15,9 @@ import FTP from 'ftp-ts';
 
 (async () => {
 
-const file = await FTP.readFile('ftp://localhost/README.md')
-
-console.log(file.toString('utf8'));
+    const file = await FTP.readFile('ftp://localhost/README.md')
+    
+    console.log(file.toString('utf8'));
 
 })()
 ```
