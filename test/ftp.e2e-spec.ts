@@ -1,8 +1,6 @@
 import { readdir, readFile } from '../src';
 
 import { FtpSrv } from 'ftp-srv';
-// const FtpServer = require('ftp-srv');
-// const FileSystem = FtpSer.FileSystem;
 
 const ftpurl = 'ftp://127.0.0.1:22221';
 
@@ -22,6 +20,8 @@ describe('FTP end 2 end with real server', () => {
       const file = await readFile(ftpurl + '/test.txt');
       expect(file.toString('utf8')).toEqual(expect.stringContaining('test'));
     });
+  });
+  describe('readdir', () => {
     it('should list files', async () => {
       const list = await readdir(ftpurl);
       expect(list).toHaveLength(1);
