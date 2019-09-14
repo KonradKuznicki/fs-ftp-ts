@@ -25,6 +25,7 @@ import FTP from 'ftp-ts';
 I also try to keep API similar to Node.js File System API
 
 # Tests 
+`$ yarn run test:all`
 
 ## Unit tests
 `$ yarn run test`
